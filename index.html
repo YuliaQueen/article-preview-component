@@ -7,7 +7,10 @@
 	
 	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+	      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 	<link rel="stylesheet" href="./css/main.css">
+	
 	
 	<title>Frontend Mentor | Article preview component</title>
 	
@@ -54,7 +57,16 @@
 				</div>
 			</div>
 			
-			<button class="card__btn-share"></button>
+			<button class="card__btn-share" id="trigger-in"></button>
+		</div>
+		<div class="card__share-panel" id="panel">
+			<p>share</p>
+			<div class="social-buttons">
+				<a href="https://ru-ru.facebook.com/" target="_blank" class="social-btn"><img src="./images/icon-facebook.svg" alt="social"></a>
+				<a href="https://twitter.com/explore" target="_blank" class="social-btn"><img src="./images/icon-twitter.svg" alt="social"></a>
+				<a href="https://www.pinterest.ru/" target="_blank" class="social-btn"><img src="./images/icon-pinterest.svg" alt="social"></a>
+			</div>
+			<button class="card__btn-share" id="trigger-out"></button>
 		</div>
 	</div>
 </div>
@@ -62,5 +74,23 @@
 	Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
 	Coded by <a href="#">Julia Koroleva</a>.
 </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('button#trigger-in').click(function () {
+            $('div#panel').fadeIn(800).css('display', 'flex');
+        })
+
+        $('button#trigger-out').click(function () {
+            $('div#panel').fadeOut(800);
+        })
+
+        $('a.social-btn').click(function () {
+            $('div#panel').fadeOut(800);
+        })
+    })
+</script>
 </body>
 </html>
